@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Clone do YouTube feito com HTML e CSS puro.">
+  <title>YouTube Clone</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+    }
+
+    /* Cabeçalho */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ccc;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: red;
+    }
+
+    header .search {
+      flex: 1;
+      margin: 0 20px;
+      display: flex;
+    }
+
+    header input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 2px 0 0 2px;
+    }
+
+    header button {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      background: #f1f1f1;
+      border-radius: 0 2px 2px 0;
+      cursor: pointer;
+    }
+
+    header .icones {
+      display: flex;
+      gap: 15px;
+      font-size: 24px;
+      color: #555;
+      cursor: pointer;
+    }
+
+    /* Layout principal */
+    .conteudo {
+      display: flex;
+    }
+
+    /* Menu lateral */
+    nav.menu {
+      width: 220px;
+      background: #fff;
+      border-right: 1px solid #ccc;
+      height: calc(100vh - 50px);
+      padding: 20px 10px;
+    }
+
+    nav.menu p {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    nav.menu p:hover {
+      background: #f1f1f1;
+      border-radius: 6px;
+      padding: 5px;
+    }
+
+    /* Grade de vídeos */
+    main.videos {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      justify-content: flex-start;
+    }
+
+    .video {
+      width: 300px;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-info {
+      padding: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .video-info img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .video-info div {
+      font-size: 14px;
+    }
+
+    .video-info div h4 {
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+
+    .video-info div p {
+      color: #666;
+      font-size: 13px;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      nav.menu {
+        display: none;
+      }
+
+      .conteudo {
+        flex-direction: column;
+      }
+
+      main.videos {
+        justify-content: center;
+      }
+
+      .video {
+        width: 100%;
+        max-width: 350px;
+      }
+
+      header .search {
+        margin: 0 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">YouTube</div>
+    <div class="search">
+      <input type="text" placeholder="Pesquisar" aria-label="Campo de busca">
+      <button aria-label="Pesquisar">
+        <span class="material-icons">search</span>
+      </button>
+    </div>
+    <div class="icones">
+      <span class="material-icons" aria-label="Criar vídeo">videocam</span>
+      <span class="material-icons" aria-label="Notificações">notifications</span>
+      <span class="material-icons" aria-label="Conta do usuário">account_circle</span>
+    </div>
+  </header>
+
+  <div class="conteudo">
+    <!-- Menu lateral -->
+    <nav class="menu">
+      <p><span class="material-icons">home</span> Início</p>
+      <p><span class="material-icons">whatshot</span> Explorar</p>
+      <p><span class="material-icons">subscriptions</span> Inscrições</p>
+      <p><span class="material-icons">video_library</span> Biblioteca</p>
+      <p><span class="material-icons">history</span> Histórico</p>
+    </nav>
+
+    <!-- Área de vídeos -->
+    <main class="videos">
+      <div class="video">
+        <div class="thumb">
+          <img src="https://plus.unsplash.com/premium_photo-1675827055694-010aef2cf08f?q=80&w=412&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Miniatura de vídeo natureza ASMR">
+        </div>
+        <div class="video-info">
+          <img src="https://plus.unsplash.com/premium_photo-1675827055694-010aef2cf08f?q=80&w=40&h=40&fit=crop" alt="Imagem do canal Natureza">
+          <div>
+            <h4>Natureza - ASMR</h4>
+            <p>Canal Nature • 1M visualizações</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video">
+        <div class="thumb">
+          <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Miniatura vídeo study and coffee">
+        </div>
+        <div class="video-info">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Imagem do canal Study Vlog">
+          <div>
+            <h4>3h - Study and Coffee</h4>
+            <p>Study Vlog • 500k visualizações</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video">
+        <div class="thumb">
+          <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Miniatura vídeo Vida no Campo">
+        </div>
+        <div class="video-info">
+          <img src="https://images.unsplash.com/photo-1444858291040-58f756a3bdd6?q=80&w=1078&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Imagem do canal Vida no Campo">
+          <div>
+            <h4>Um Dia de Colheita</h4>
+            <p>Vida no Campo • 230k visualizações</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="video">
+        <div class="thumb">
+          <img src="https://images.unsplash.com/photo-1613376023733-0a73315d9b06?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Miniatura vídeo Naruto">
+        </div>
+        <div class="video-info">
+          <img src="https://images.unsplash.com/photo-1674448417295-088682b6adec?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Imagem do canal Anime Brkon">
+          <div>
+            <h4>Corte - Último Episódio - Naruto</h4>
+            <p>Anime Brkon • 80k visualizações</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
